@@ -3,4 +3,4 @@
 
 <!-- badges: end -->
 
-This is the repository for the CV of [Michael Sieler](https://MichaelSieler.com).
+This is the repository for the resume and CV of [Michael Sieler](https://michaelsieler.com/en/latest/Experience/experience.html#download-resume-cv).
