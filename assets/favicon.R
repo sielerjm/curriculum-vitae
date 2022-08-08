@@ -1,4 +1,4 @@
-library(magick)
+# library(magick)
 path_in <- "utils/favicon.png"
 image <- image_read(path_in)
 sizes <- c(

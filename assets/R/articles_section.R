@@ -1,12 +1,13 @@
-articles_section <- function(bib = "data/cv.bib", author = NULL, page_break_after = FALSE, only_first = FALSE) {
+articles_section <- function(bib = "data/cv.bib", author = NULL, page_break_after = FALSE, only_first = FALSE, colour = "#3f007d") {
   author <- gsub(" ", "&nbsp;", author)
   text <- data.table::setDT(read_bib(bib))[
     j = sprintf(
-      "### %s\n\n%s\n\nN/A\n\n%s %s\n\n::: aside\n\n*[%s](%s)*\n%s\n:::",
+      "### %s\n\n%s\n\nN/A\n\n%s %s\n\n::: aside\n\n*[%s](%s)*\n\n:::",
       title,
-      format_bib_author(authors, first, author),
+      format_bib_author(authors, first, author, max = 15),
       month, year,
-      journal, doi,
+      paste0(fontawesome::fa("link", fill = colour), " ", journal), 
+      doi,
       ifelse(
         test = first,
         yes = '<p style="font-size: 75%;"><sup>&dagger;</sup> As first or co-first author.</p>',
@@ -104,7 +105,7 @@ format_bib_author <- function(authors, first, author, max = 10) {
       split_authors <- unlist(strsplit(strsplit(iauthors, ", ")[[1]], " and "))
       split_authors <- gsub(
         pattern = author,
-        replacement = paste0("<u>", author, "</u>", if (ifirst) "<sup>&dagger;</sup>" else ""),
+        replacement = paste0("<u class='user.author'>", author, "</u>", if (ifirst) "<sup>&dagger;</sup>" else ""),
         x = split_authors
       )
       pos_author <- grep(author, split_authors)

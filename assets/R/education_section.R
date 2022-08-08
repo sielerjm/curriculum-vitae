@@ -1,4 +1,4 @@
-education_section <- function(xlsx = "data/cv.xlsx", sheet = "education", page_break_after = FALSE) {
+education_section <- function(xlsx = "data/cv.xlsx", sheet = "education", page_break_after = FALSE, colour = "#3f007d") {
   text <- read_excel_sheet(xlsx, sheet)[
     i = .N:1,
     j = sprintf(

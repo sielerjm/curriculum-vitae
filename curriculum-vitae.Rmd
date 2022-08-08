@@ -1,10 +1,11 @@
 ---
 params:
-  author: "Mickaël Canouil"
+  author: "Michael J. Sieler Jr."
   xlsx: "data/cv.xlsx"
   bib: "data/cv.bib"
   picture: "data/cv.png"
-title: '`r sprintf("%s - Curriculum Vitæ", params[["author"]])`'
+  outType: "CV" # "Resume" or "CV"
+title: '`r sprintf("%s - Curriculum Vitae", params[["author"]])`'
 author: '`r params[["author"]]`'
 output:
   pagedown::html_resume:
@@ -42,20 +43,41 @@ knitr::include_graphics(params[["picture"]])
 ```
 
 ```{r}
-cat(
-  contact_section(xlsx = params[["xlsx"]], sheet = "contact"),
-  skills_section(xlsx = params[["xlsx"]], sheet = "skills"),
-  disclaimer_section(text = NULL),
-  title_section(author = params[["author"]]),
-  profil_section(xlsx = params[["xlsx"]], sheet = "profil"),
-  education_section(xlsx = params[["xlsx"]], sheet = "education", page_break_after = FALSE),
-  experience_section(xlsx = params[["xlsx"]], sheet = "experience", page_break_after = FALSE),
-  workshop_section(xlsx = params[["xlsx"]], sheet = "workshop", page_break_after = FALSE, colour = "#33333"),
-  awards_section(xlsx = params[["xlsx"]], sheet = "awards", page_break_after = FALSE, colour = "#33333"),
-  oral_section(xlsx = params[["xlsx"]], sheet = "oral", page_break_after = FALSE, colour = "#33333"),
-  poster_section(xlsx = params[["xlsx"]], sheet = "poster", page_break_after = FALSE, colour = "#33333"),
-  packages_section(xlsx = params[["xlsx"]], sheet = "packages", author = params[["author"]], page_break_after = FALSE),
-  articles_section(bib = params[["bib"]], author = params[["author"]], page_break_after = FALSE, only_first = TRUE),
-  sep = "\n"
-)
+
+if(params[["outType"]] == "resume"){
+    # Resume
+    cat(
+      contact_section(xlsx = params[["xlsx"]], sheet = "contact"),
+      skills_section(xlsx = params[["xlsx"]], sheet = "skills"),
+      disclaimer_section(text = NULL),
+      title_section(author = params[["author"]]),
+      profile_section(xlsx = params[["xlsx"]], sheet = "profile"),
+      education_section(xlsx = params[["xlsx"]], sheet = "education", page_break_after = FALSE),
+      # experience_section(xlsx = params[["xlsx"]], sheet = "experience", page_break_after = FALSE),
+      research_section(xlsx = params[["xlsx"]], sheet = "research", page_break_after = FALSE),
+      work_section(xlsx = params[["xlsx"]], sheet = "work", page_break_after = FALSE),
+      sep = "\n"
+    )
+} else {
+    # CV
+    cat(  
+      contact_section(xlsx = params[["xlsx"]], sheet = "contact"),
+      skills_section(xlsx = params[["xlsx"]], sheet = "skills"),
+      disclaimer_section(text = NULL),
+      title_section(author = params[["author"]]),
+      profile_section(xlsx = params[["xlsx"]], sheet = "profile"),
+      education_section(xlsx = params[["xlsx"]], sheet = "education", page_break_after = FALSE),
+      work_section(xlsx = params[["xlsx"]], sheet = "work", page_break_after = FALSE),
+      research_section(xlsx = params[["xlsx"]], sheet = "research", page_break_after = FALSE),
+      # workshop_section(xlsx = params[["xlsx"]], sheet = "workshop", page_break_after = FALSE, colour = "#3f007d"),
+      awards_section(xlsx = params[["xlsx"]], sheet = "awards", page_break_after = FALSE, colour = "#3f007d"),
+      certificate_section(xlsx = params[["xlsx"]], sheet = "certificates", page_break_after = FALSE, colour = "#3f007d"),
+      oral_section(xlsx = params[["xlsx"]], sheet = "oral", page_break_after = FALSE, colour = "#3f007d"),
+      poster_section(xlsx = params[["xlsx"]], sheet = "poster", page_break_after = FALSE, colour = "#3f007d"),
+      # packages_section(xlsx = params[["xlsx"]], sheet = "packages", author = params[["author"]], page_break_after = FALSE),
+      articles_section(bib = params[["bib"]], author = params[["author"]], page_break_after = FALSE, only_first = FALSE),
+      sep = "\n"
+    )
+}
+
 ```

@@ -1,4 +1,4 @@
-poster_section <- function(xlsx = "data/cv.xlsx", sheet = "poster", page_break_after = FALSE, colour = "#333333") {
+poster_section <- function(xlsx = "data/cv.xlsx", sheet = "poster", page_break_after = FALSE, colour = "#3f007d") {
   text <- read_excel_sheet(xlsx, sheet)[
     i = .N:1,
     j = sprintf(

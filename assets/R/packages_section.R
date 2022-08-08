@@ -3,7 +3,7 @@ packages_section <- function(
   sheet = "packages",
   author = NULL,
   page_break_after = FALSE,
-  colour = "#333333"
+  colour = "#3f007d"
 ) {
   text <- read_excel_sheet(xlsx, sheet)[
     i = .N:1,

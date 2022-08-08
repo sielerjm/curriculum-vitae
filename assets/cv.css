@@ -14,7 +14,7 @@
   --content-width: calc(var(--page-width) - var(--margin-right) - var(--margin-left));
   --root-font-size: 12pt;
   --sidebar-width: 15rem;
-  --sidebar-background-color: #f2f2f2;
+  --sidebar-background-color: #dadaeb;
   --main-width: calc(var(--content-width) - var(--sidebar-width));
   --decorator-horizontal-margin: 0.2in;
 
@@ -161,7 +161,7 @@ h1, h2 {
   position: absolute;
   left: var(--main-blocks-title-icon-offset-left);
   z-index: 1; /* over decorator line */
-  color: #444;
+  color: #3f007d;
 }
 
 #main h2::after { /* extends the decorator line */
@@ -267,7 +267,7 @@ h1, h2 {
   width: calc(var(--decorator-outer-dim) - (var(--decorator-border-width) * 2));
   height: calc(var(--decorator-outer-dim) - (var(--decorator-border-width) * 2));
   border-radius: calc((var(--decorator-outer-dim) - (var(--decorator-border-width) * 2)) / 2);
-  background-color: #555;
+  background-color: #3f007d;
 }
 
 .blocks:last-child .decorator { /* slightly shortens it */
@@ -318,6 +318,10 @@ h1, h2 {
   clear: both;
 }
 
+.fa-map-marker-alt::before {
+    color: #3f007d;
+}
+
 /***** fine-tunes on the lists... *****/
 
 #main ul {
@@ -354,7 +358,6 @@ h1, h2 {
 .details .concise li {
   margin-left: 0 !important;
 }
-
 
 
 /* sidebar */
@@ -406,11 +409,11 @@ h1, h2 {
   font-style: italic;
   line-height: 1.1;
   text-align: right;
-  color: #777;
+  color: #3f007d;
 }
 
 #disclaimer code {
-  color: #666;
+  color: #3f007d;
   font-family: "Source Code Pro";
   font-weight: 500;
   font-style: normal;
