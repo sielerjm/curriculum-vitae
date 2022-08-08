@@ -4,7 +4,7 @@ params:
   xlsx: "data/cv.xlsx"
   bib: "data/cv.bib"
   picture: "data/cv.png"
-  outType: "resume"  # "Resume" or "CV"
+  outType: "Resume"  # "Resume" or "CV"
 title: '`r sprintf("%s - Curriculum Vitae", params[["author"]])`'
 author: '`r params[["author"]]`'
 output:
