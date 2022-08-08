@@ -368,7 +368,7 @@ h1, h2 {
 }
 
 .aside .level2 {
-  margin-top: 0.5in;
+  margin-top: 0.15in;
 }
 
 #contact {
@@ -399,6 +399,26 @@ h1, h2 {
 #skills ul {
   margin: 0.05in 0 0.15in;
   padding: 0;
+}
+
+#moreInfo {
+  color: var(--main-colour);
+}
+
+#moreInfo a {
+  color: var(--main-colour);
+}
+
+#moreInfo ul {
+  margin-top: 0.05in;
+  padding-left: 0;
+  font-weight: 500;
+  line-height: 1.75;
+}
+
+#moreInfo li > i {
+  width: 0.9rem; /* for text alignment */
+  text-align: right;
 }
 
 #disclaimer {

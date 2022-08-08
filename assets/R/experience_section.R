@@ -2,8 +2,8 @@ experience_section <- function(xlsx = "data/cv.xlsx", sheet = "experience", page
   text <- read_excel_sheet(xlsx, sheet)[
     i = .N:1,
     j = sprintf(
-        "### %s\n\n%s\n\n%s\n\n%s\n\n::: aside\n%s\n:::\n\n\n\n",
-        title, organiser, city, date, add_github_logo(url, colour)
+        "### %s\n\n%s\n\n%s\n\n%s - %s\n\n%s\n\nProjects: *%s*\n\nTools Used: *%s*\n\n\n\n",
+        position, institute, city, start, end, activities, projects, tools_used
     )
   ]
 

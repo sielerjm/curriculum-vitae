@@ -4,7 +4,7 @@ params:
   xlsx: "data/cv.xlsx"
   bib: "data/cv.bib"
   picture: "data/cv.png"
-  outType: "CV" # "Resume" or "CV"
+  outType: "resume"  # "Resume" or "CV"
 title: '`r sprintf("%s - Curriculum Vitae", params[["author"]])`'
 author: '`r params[["author"]]`'
 output:
@@ -34,6 +34,11 @@ invisible(sapply(
   ),
   FUN = source
 ))
+
+
+# Sources: https://m.canouil.fr/curriculum-vitae/
+
+
 ```
 
 # Aside
@@ -44,24 +49,25 @@ knitr::include_graphics(params[["picture"]])
 
 ```{r}
 
-if(params[["outType"]] == "resume"){
+if(params[["outType"]] == "Resume"){
     # Resume
     cat(
-      contact_section(xlsx = params[["xlsx"]], sheet = "contact"),
+      contact_section(xlsx = params[["xlsx"]], sheet = "contact", colour = "#3f007d"),
       skills_section(xlsx = params[["xlsx"]], sheet = "skills"),
+      moreInfo_section(xlsx = params[["xlsx"]], sheet = "moreInfo", colour = "#3f007d"),
       disclaimer_section(text = NULL),
       title_section(author = params[["author"]]),
       profile_section(xlsx = params[["xlsx"]], sheet = "profile"),
       education_section(xlsx = params[["xlsx"]], sheet = "education", page_break_after = FALSE),
-      # experience_section(xlsx = params[["xlsx"]], sheet = "experience", page_break_after = FALSE),
-      research_section(xlsx = params[["xlsx"]], sheet = "research", page_break_after = FALSE),
-      work_section(xlsx = params[["xlsx"]], sheet = "work", page_break_after = FALSE),
+      experience_section(xlsx = params[["xlsx"]], sheet = "experience", page_break_after = FALSE),
+      # research_section(xlsx = params[["xlsx"]], sheet = "research", page_break_after = FALSE),
+      # work_section(xlsx = params[["xlsx"]], sheet = "work", page_break_after = FALSE),
       sep = "\n"
     )
 } else {
     # CV
     cat(  
-      contact_section(xlsx = params[["xlsx"]], sheet = "contact"),
+      contact_section(xlsx = params[["xlsx"]], sheet = "contact", colour = "#3f007d"),
       skills_section(xlsx = params[["xlsx"]], sheet = "skills"),
       disclaimer_section(text = NULL),
       title_section(author = params[["author"]]),
