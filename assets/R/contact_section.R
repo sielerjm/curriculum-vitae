@@ -17,17 +17,17 @@ contact_section <- function(xlsx = "data/cv.xlsx", sheet = "contact", colour = "
         "\n",
         sep = "\n"
       ),
-      fontawesome::fa("user", fill = colour), position,
-      fontawesome::fa("building-columns", fill = colour), institute,
-      fontawesome::fa("location-pin", fill = colour), city,
-      fontawesome::fa("envelope", fill = colour), sub("@", " [at] ", email), email,
-      # fontawesome::fa("phone-flip", fill = colour), phone,
-      fontawesome::fa("house", fill = colour), sub("/$", "", sub("https*://", "", website)), website,
-      fontawesome::fa("orcid", fill = colour), orcid, orcid,
-      fontawesome::fa("linkedin", fill = colour), linkedin, linkedin,
-      fontawesome::fa("github", fill = colour), github, github
-      # fontawesome::fa("twitter", fill = colour), twitter, twitter,
-      # fontawesome::fa("r-project", fill = colour), rgroup
+      fontawesome::fa("user", fill = colour, margin_right = "0.2em", height = "1em", width = "1em"), position,
+      fontawesome::fa("building-columns", fill = colour, margin_right = "0.2em", height = "1em", width = "1em"), institute,
+      fontawesome::fa("earth-americas", fill = colour, margin_right = "0.2em", width = "1em"), city,
+      fontawesome::fa("envelope", fill = colour, margin_right = "0.2em", height = "1em", width = "1em"), sub("@", " [at] ", email), email,
+      # fontawesome::fa("phone-flip", fill = colour, margin_right = "0.2em", height = "1em", width = "1em"), phone,
+      fontawesome::fa("house", fill = colour, margin_right = "0.2em", width = "1em"), sub("/$", "", sub("https*://", "", website)), website,
+      fontawesome::fa("orcid", fill = colour, margin_right = "0.2em", height = "1em", width = "1em"), orcid, orcid,
+      fontawesome::fa("linkedin", fill = colour, margin_right = "0.2em", height = "1em", width = "1em"), linkedin, linkedin,
+      fontawesome::fa("github", fill = colour, margin_right = "0.2em", height = "1em", width = "1em"), github, github
+      # fontawesome::fa("twitter", fill = colour, margin_right = "0.2em", height = "1em", width = "1em"), twitter, twitter,
+      # fontawesome::fa("r-project", fill = colour, margin_right = "0.2em", height = "1em", width = "1em"), rgroup
     )
   ]
 }

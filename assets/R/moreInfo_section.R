@@ -8,8 +8,8 @@ moreInfo_section <- function(xlsx = "data/cv.xlsx", sheet = "moreInfo", colour =
                 "\n",
                 sep = "\n"
             ),
-            fontawesome::fa("newspaper", fill = colour), "Publications", publications,
-            fontawesome::fa("list", fill = colour), "Projects", projects
+            fontawesome::fa("newspaper", fill = colour, margin_right = "0.2em", width = "1em"), "Publications", publications,
+            fontawesome::fa("list", fill = colour, margin_right = "0.2em", width = "1em"), "Projects", projects
         )
     ]
 }

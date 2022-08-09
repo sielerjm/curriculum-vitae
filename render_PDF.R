@@ -1,6 +1,9 @@
 
 # HTML to PDF -------------------------------------------------------------
 
+library(pagedown)
+library(rmarkdown)
+
 output.dir = "/Users/michaelsieler/Dropbox/Mac (2)/Documents/Project_Repos/michaelsieler/ResumeCV/"
 user.name = "MichaelSieler"
 

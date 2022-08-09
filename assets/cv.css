@@ -387,7 +387,7 @@ h1, h2 {
 }
 
 #contact li > i {
-  width: 0.9rem; /* for text alignment */
+  width: .9rem; /* for text alignment */
   text-align: right;
 }
 

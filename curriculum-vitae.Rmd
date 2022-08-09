@@ -4,7 +4,7 @@ params:
   xlsx: "data/cv.xlsx"
   bib: "data/cv.bib"
   picture: "data/cv.png"
-  outType: "Resume"  # "Resume" or "CV"
+  outType: "CV"  # "Resume" or "CV"
 title: '`r sprintf("%s - Curriculum Vitae", params[["author"]])`'
 author: '`r params[["author"]]`'
 output:
@@ -37,7 +37,7 @@ invisible(sapply(
 
 
 # Sources: https://m.canouil.fr/curriculum-vitae/
-
+# icons <- data.frame(label = fontawesome::fa_metadata()$icon_names)  # Font Awesome icons
 
 ```
 
