@@ -4,7 +4,7 @@ params:
   xlsx: "data/cv.xlsx"
   bib: "data/cv.bib"
   picture: "data/cv.png"
-  outType: "CV"  # "Resume" or "CV"
+  outType: "Resume"  # "Resume" or "CV"
 title: '`r sprintf("%s - Curriculum Vitae", params[["author"]])`'
 author: '`r params[["author"]]`'
 output:
@@ -55,7 +55,7 @@ if(params[["outType"]] == "Resume"){
       contact_section(xlsx = params[["xlsx"]], sheet = "contact", colour = "#3f007d"),
       skills_section(xlsx = params[["xlsx"]], sheet = "skills"),
       moreInfo_section(xlsx = params[["xlsx"]], sheet = "moreInfo", colour = "#3f007d"),
-      disclaimer_section(text = NULL),
+      # disclaimer_section(text = NULL),
       title_section(author = params[["author"]]),
       profile_section(xlsx = params[["xlsx"]], sheet = "profile"),
       education_section(xlsx = params[["xlsx"]], sheet = "education", page_break_after = FALSE),

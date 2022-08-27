@@ -8,7 +8,7 @@ skills_section <- function(xlsx = "data/cv.xlsx", sheet = "skills") {
     by = "level"
   ][
     j = sprintf(
-      '- <u style="color: var(--main-color);">*%s:*</u> %s',
+      '- <u style="color: var(--main-color);">*%s*</u>: %s',
       capitalise(level),
       what
     )

@@ -43,7 +43,7 @@
 }
 
 @page {
-  size: A4 portrait;
+  size: letter;
   margin: 0.5in 0.25in 0.5in 0.25in;
   background: linear-gradient(to left, var(--sidebar-background-color), var(--sidebar-background-color) var(--sidebar-background-width), white var(--sidebar-background-width));
 }
@@ -472,4 +472,14 @@ h1, h2 {
   border-color: var(--main-colour);
   border-radius: 50%;
   padding: 5pt;
+}
+
+
+p {
+margin-bottom: .5em;
+margin-top: .5em; 
+}
+
+#education {
+margin-top: -2em;
 }

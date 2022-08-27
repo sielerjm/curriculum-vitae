@@ -2,7 +2,7 @@ research_section <- function(xlsx = "data/cv.xlsx", sheet = "research", page_bre
   text <- read_excel_sheet(xlsx, sheet)[
     i = .N:1,
     j = sprintf(
-        "### %s\n\n%s\n\nN/A\n\nN/A\n\nTools: *%s*\n\n::: aside\n\n*[%s](%s)*\n\n:::",
+        "### %s\n\n%s\n\nN/A\n\nN/A\n\n<u>Tools</u>: *%s*\n\n::: aside\n\n*[%s](%s)*\n\n:::",
         project, activities, tools_used, paste0(fontawesome::fa("link", fill = colour), " ", author), url
     )
   ]

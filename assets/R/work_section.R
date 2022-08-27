@@ -2,7 +2,7 @@ work_section <- function(xlsx = "data/cv.xlsx", sheet = "work", page_break_after
   text <- read_excel_sheet(xlsx, sheet)[
     i = .N:1,
     j = sprintf(
-      "### %s\n\n%s\n\n%s\n\n%s - %s\n\nActivities: *%s*\n\nProjects: *%s*\n\n",
+      "### %s\n\n%s\n\n%s\n\n%s - %s\n\n<u>Activities</u>: %s\n\n<u>Projects</u>: %s\n\n",
       position, institute, city, start, end, activities, projects
     )
   ]
